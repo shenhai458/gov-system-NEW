@@ -1,9 +1,9 @@
 import { z } from "zod";
-import { createRouter, publicProcedure, adminProcedure } from "../middleware";
-import { getDb } from "../queries/connection";
-import { projects, projectFields } from "@db/schema";
+import { createRouter, publicProcedure, adminProcedure } from "../middleware.js";
+import { getDb } from "../queries/connection.js";
+import { projects, projectFields } from "../../db/schema.js";
 import { eq, like, desc, sql, and } from "drizzle-orm";
-import { computeProjectStats } from "../lib/stats";
+import { computeProjectStats } from "../lib/stats.js";
 
 export const projectRouter = createRouter({
   list: publicProcedure

@@ -1,9 +1,9 @@
 import { z } from "zod";
-import { createRouter, publicProcedure, adminProcedure } from "../middleware";
-import { getDb } from "../queries/connection";
-import { projects, analyticsCards } from "@db/schema";
+import { createRouter, publicProcedure, adminProcedure } from "../middleware.js";
+import { getDb } from "../queries/connection.js";
+import { projects, analyticsCards } from "../../db/schema.js";
 import { eq } from "drizzle-orm";
-import { computeProjectStats } from "../lib/stats";
+import { computeProjectStats } from "../lib/stats.js";
 
 export const analyticsRouter = createRouter({
   overview: publicProcedure.query(async () => {

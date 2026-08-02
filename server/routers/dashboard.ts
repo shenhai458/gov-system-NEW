@@ -1,9 +1,9 @@
 import { z } from "zod";
-import { createRouter, publicProcedure, adminProcedure } from "../middleware";
-import { getDb } from "../queries/connection";
-import { dashboardWidgets, projects } from "@db/schema";
+import { createRouter, publicProcedure, adminProcedure } from "../middleware.js";
+import { getDb } from "../queries/connection.js";
+import { dashboardWidgets, projects } from "../../db/schema.js";
 import { eq, desc } from "drizzle-orm";
-import { computeProjectStats } from "../lib/stats";
+import { computeProjectStats } from "../lib/stats.js";
 
 export const dashboardRouter = createRouter({
   widgets: createRouter({
