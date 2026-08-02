@@ -251,6 +251,7 @@ export default function Users() {
                   <label className="block text-sm text-gray-700 mb-1">部门</label>
                   <select value={form.department} onChange={(e) => setForm({ ...form, department: e.target.value })} className="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm">
                     <option value="">请选择</option>
+                    <option value="总经办">总经办</option>
                     <option value="品牌部">品牌部</option>
                   </select>
                 </div>
