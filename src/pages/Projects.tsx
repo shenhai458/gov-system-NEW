@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { trpc } from "@/providers/trpc";
 import { useAuth } from "@/hooks/useAuth";
+import { DEPT_FILTER_OPTIONS } from "@/lib/constants";
 import {
   Plus, Search, Download, Upload, Trash2, Edit, X, Settings2, Save,
 } from "lucide-react";
@@ -13,16 +14,7 @@ const STATUS_OPTIONS = [
   { value: "pending", label: "待审核" },
 ];
 
-const DEPT_OPTIONS = [
-  { value: "all", label: "全部" },
-  { value: "厦门市科学技术局", label: "科技局" },
-  { value: "发改委", label: "发改委" },
-  { value: "人社局", label: "人社局" },
-  { value: "商务局", label: "商务局" },
-  { value: "工信局", label: "工信局" },
-  { value: "厦门市强质办", label: "强质办" },
-  { value: "其他", label: "其他" },
-];
+const DEPT_OPTIONS = DEPT_FILTER_OPTIONS;
 
 const WARNING_OPTIONS = [
   { value: "all", label: "全部" },
