@@ -1,5 +1,5 @@
 import type { FetchCreateContextFnOptions } from "@trpc/server/adapters/fetch";
-import { verifyToken } from "./lib/auth";
+import { verifyToken } from "./lib/auth.js";
 
 export type TrpcContext = {
   req: Request;

@@ -1,11 +1,11 @@
-import { createRouter } from "./middleware";
-import { authRouter } from "./routers/auth";
-import { projectRouter } from "./routers/project";
-import { userRouter } from "./routers/user";
-import { settingRouter } from "./routers/setting";
-import { analyticsRouter } from "./routers/analytics";
-import { dashboardRouter } from "./routers/dashboard";
-import { honorRouter } from "./routers/honor";
+import { createRouter } from "./middleware.js";
+import { authRouter } from "./routers/auth.js";
+import { projectRouter } from "./routers/project.js";
+import { userRouter } from "./routers/user.js";
+import { settingRouter } from "./routers/setting.js";
+import { analyticsRouter } from "./routers/analytics.js";
+import { dashboardRouter } from "./routers/dashboard.js";
+import { honorRouter } from "./routers/honor.js";
 
 export const appRouter = createRouter({
   auth: authRouter,
