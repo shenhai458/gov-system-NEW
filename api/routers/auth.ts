@@ -1,7 +1,7 @@
 import { z } from "zod";
 import { createRouter, publicProcedure } from "../middleware.js";
 import { getDb } from "../queries/connection.js";
-import { users } from "../db/schema.js";
+import { users } from "../../db/schema.js";
 import { eq } from "drizzle-orm";
 import bcrypt from "bcryptjs";
 import { createToken } from "../lib/auth.js";

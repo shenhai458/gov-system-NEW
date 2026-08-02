@@ -1,5 +1,5 @@
 import type { InferSelectModel } from "drizzle-orm";
-import { projects } from "../db/schema.js";
+import { projects } from "../../db/schema.js";
 
 type Project = InferSelectModel<typeof projects>;
 

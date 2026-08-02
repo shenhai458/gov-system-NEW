@@ -1,7 +1,7 @@
 import { z } from "zod";
 import { createRouter, publicProcedure, adminProcedure } from "../middleware.js";
 import { getDb } from "../queries/connection.js";
-import { dashboardWidgets, projects } from "../db/schema.js";
+import { dashboardWidgets, projects } from "../../db/schema.js";
 import { eq, desc } from "drizzle-orm";
 import { computeProjectStats } from "../lib/stats.js";
 

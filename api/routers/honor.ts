@@ -1,7 +1,7 @@
 import { z } from "zod";
 import { createRouter, publicProcedure, adminProcedure } from "../middleware.js";
 import { getDb } from "../queries/connection.js";
-import { honors, honorRenewals } from "../db/schema.js";
+import { honors, honorRenewals } from "../../db/schema.js";
 import { eq, desc, and, like } from "drizzle-orm";
 
 function computeHonorStatus(expiryDate: Date | null): "valid" | "expiring" | "expired" {

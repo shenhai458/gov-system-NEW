@@ -1,7 +1,7 @@
 import { z } from "zod";
 import { createRouter, publicProcedure, adminProcedure } from "../middleware.js";
 import { getDb } from "../queries/connection.js";
-import { projects, analyticsCards } from "../db/schema.js";
+import { projects, analyticsCards } from "../../db/schema.js";
 import { eq } from "drizzle-orm";
 import { computeProjectStats } from "../lib/stats.js";
 
@@ -25,7 +25,7 @@ export const analyticsRouter = createRouter({
     const db = getDb();
     const allProjects = await db.select().from(projects);
     const months = Array.from({ length: 12 }, (_, i) => i + 1);
-    const monthNames = ["1æœ?, "2æœ?, "3æœ?, "4æœ?, "5æœ?, "6æœ?, "7æœ?, "8æœ?, "9æœ?, "10æœ?, "11æœ?, "12æœ?];
+    const monthNames = ["1æœˆ", "2æœˆ", "3æœˆ", "4æœˆ", "5æœˆ", "6æœˆ", "7æœˆ", "8æœˆ", "9æœˆ", "10æœˆ", "11æœˆ", "12æœˆ"];
 
     return months.map((month, idx) => {
       const monthProjects = allProjects.filter((p) => {
@@ -58,7 +58,7 @@ export const analyticsRouter = createRouter({
     const allProjects = await db.select().from(projects);
     const statusMap: Record<string, number> = {};
     allProjects.forEach((p) => {
-      const label = p.status === "ok" ? "å·²é€šè¿‡" : p.status === "failed" ? "æœªé€šè¿‡" : p.status === "in_progress" ? "è¿›è¡Œä¸? : "å¾…å®¡æ ?;
+      const label = p.status === "ok" ? "å·²é€šè¿‡" : p.status === "failed" ? "æœªé€šè¿‡" : p.status === "in_progress" ? "è¿›è¡Œä¸­" : "å¾…å®¡æ ¸";
       statusMap[label] = (statusMap[label] || 0) + 1;
     });
     return Object.entries(statusMap).map(([name, value]) => ({ name, value }));
@@ -84,7 +84,7 @@ export const analyticsRouter = createRouter({
   monthlyAmount: publicProcedure.query(async () => {
     const db = getDb();
     const allProjects = await db.select().from(projects);
-    const monthNames = ["1æœ?, "2æœ?, "3æœ?, "4æœ?, "5æœ?, "6æœ?, "7æœ?, "8æœ?, "9æœ?, "10æœ?, "11æœ?, "12æœ?];
+    const monthNames = ["1æœˆ", "2æœˆ", "3æœˆ", "4æœˆ", "5æœˆ", "6æœˆ", "7æœˆ", "8æœˆ", "9æœˆ", "10æœˆ", "11æœˆ", "12æœˆ"];
 
     return Array.from({ length: 12 }, (_, i) => i + 1).map((month, idx) => {
       const monthProjects = allProjects.filter((p) => {
