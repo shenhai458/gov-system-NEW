@@ -1,4 +1,4 @@
-import { getDb } from "../api/queries/connection";
+import { getDb } from "../api/queries/connection.js";
 import {
   users,
   projects,
@@ -8,7 +8,7 @@ import {
   analyticsCards,
   honors,
   honorRenewals,
-} from "./schema";
+} from "./schema.js";
 import bcrypt from "bcryptjs";
 
 async function seed() {
